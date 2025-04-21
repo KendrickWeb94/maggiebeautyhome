@@ -24,7 +24,7 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
   useEffect(() => {
     if (userId) {
       axios
-        .post("http://localhost/maggiebeautyhome-backend/fetch-cart.php", {
+        .post("https://maggiebeautyhome.kesug.com/fetch-cart.php", {
           userId: parseInt(userId),
         })
         .then((response) => {

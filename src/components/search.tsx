@@ -28,7 +28,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onClose }) => {
   function handleSearch() {
     setHasSearched(true);
     axios
-      .post("http://localhost/maggiebeautyhome-backend/search-products.php", {
+      .post("https://maggiebeautyhome.kesug.com/search-products.php", {
         searchTerm: searchTerm,
       })
       .then((response) => {

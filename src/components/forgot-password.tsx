@@ -11,7 +11,7 @@ const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({ onClose }) =>
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    axios.post('http://localhost/maggiebeautyhome-backend/forgot-password.php', { email })
+    axios.post('https://maggiebeautyhome.kesug.com/forgot-password.php', { email })
       .then(response => {
         setMessage(response.data.message);
       })

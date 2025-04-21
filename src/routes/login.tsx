@@ -8,6 +8,7 @@ import {  Warning } from '@phosphor-icons/react';
 import { auth, googleProvider, appleProvider } from '../firebase';
 import { signInWithPopup } from 'firebase/auth';
 import ForgotPasswordModal from "../components/forgot-password";
+import { ArrowLeft } from '@phosphor-icons/react/dist/ssr';
 
 
 export const Login: React.FC = () => {
@@ -19,7 +20,7 @@ export const Login: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     axios
-      .post('http://localhost/maggiebeautyhome-backend/login.php', { email, password })
+      .post('https://maggiebeautyhome.kesug.com/login.php', { email, password })
       .then((response) => {
         if (response.data.success) {
           alert('Login successful!');
@@ -80,10 +81,10 @@ export const Login: React.FC = () => {
   };
 
   return (
-    <main className="w-full min-h-screen relative flex items-center justify-center bg-gray-200/30">
-      <section className="max-w-[350px] w-full bg-white space-y-6 py-8 rounded-2xl shadow px-5">
+    <main className="w-full min-h-screen relative flex items-center justify-center ds:bg-white sm:bg-gray-200/30">
+      <section className="max-w-[350px] w-full bg-white space-y-6 py-8 rounded-2xl ds:shadow-none sm:shadow px-5">
         <button onClick={handleBack} className="text-sm text-primary inter-600">
-          &larr; Back
+            <ArrowLeft size={20}/> 
         </button>
         <div className="w-full flex items-center justify-center">
           <img src={LogoImg} alt="" className="w-16" />

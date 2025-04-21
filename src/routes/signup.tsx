@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import GoogleImg from "../assets/google.svg";
 import AppleImg from "../assets/apple.svg"; // Add Apple logo
 import { LogoImg } from "../components/logo";
-import { Check, Warning } from "@phosphor-icons/react";
+import { ArrowLeft, Check, Warning } from "@phosphor-icons/react";
 import { auth, googleProvider, appleProvider } from "../firebase"; // Ensure this path is correct
 import { signInWithPopup } from "firebase/auth";
 
@@ -19,7 +19,7 @@ export const SignUp: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     axios
-      .post("http://localhost/maggiebeautyhome-backend/signup.php", {
+      .post("https://maggiebeautyhome.kesug.com/signup.php", {
         name,
         email,
         password,
@@ -92,10 +92,10 @@ export const SignUp: React.FC = () => {
   };
 
   return (
-    <main className="w-full min-h-screen relative flex items-center justify-center bg-gray-200/30">
-      <section className="max-w-[350px] w-full bg-white space-y-6 py-8 rounded-2xl shadow px-5">
+    <main className="w-full min-h-screen relative flex items-center justify-center ds:bg-white sm:bg-gray-200/30">
+      <section className="max-w-[350px] w-full bg-white space-y-6 py-8 rounded-2xl ds:shadow-none sm:shadow px-5">
         <button onClick={handleBack} className="text-sm text-primary inter-600">
-          &larr; Back
+          <ArrowLeft size={20}/> 
         </button>
         <div className="w-full flex items-center justify-center">
           <img src={LogoImg} alt="" className="w-16" />

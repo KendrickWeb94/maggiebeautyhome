@@ -21,7 +21,7 @@ const ProductList: React.FC = () => {
     const [products, setProducts] = useState<Product[]>([]);
 
     useEffect(() => {
-        axios.get('http://localhost/maggiebeautyhome-backend/get_products.php')
+        axios.get('https://maggiebeautyhome.kesug.com/get_products.php')
             .then((response) => {
                 setProducts(response.data);
             })

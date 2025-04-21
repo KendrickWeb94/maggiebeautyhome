@@ -13,7 +13,7 @@ export const CartCount: React.FC<CartCountProps> = ({ userId }) => {
     if (userId) {
       console.log("Fetching cart count for userId:", userId); // Debugging log
       axios
-        .get(`http://localhost/maggiebeautyhome-backend/count-cart.php`, {
+        .get("https://maggiebeautyhome.kesug.com/count-cart.php", {
           params: { userId: parseInt(userId, 10) },
         })
         .then((response) => {

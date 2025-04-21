@@ -14,7 +14,7 @@ const RemoveCart: React.FC<RemoveCartProps> = ({ productId, onRemove }) => {
     const handleRemove = () => {
         if (userId) {
             axios
-                .post("http://localhost/maggiebeautyhome-backend/remove-from-cart.php", {
+                .post("https://maggiebeautyhome.kesug.com/remove-from-cart.php", {
                     userId: parseInt(userId),
                     productId: productId,
                 })

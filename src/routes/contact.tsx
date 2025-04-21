@@ -1,9 +1,11 @@
+
 import { TopBar } from "../components/topbar";
 
 export const Contact = () => {
   return (
     <main className="w-full min-h-screen container max-w-[90%] mx-auto">
       <TopBar />
+      
       <section className="">
         <section className="bg-white ">
           <br />

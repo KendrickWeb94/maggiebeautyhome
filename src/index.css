@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 html {
-  font-family: "Inter"
+  font-family: "Inter";
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
 }
 
 body {

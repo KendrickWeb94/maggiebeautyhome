@@ -42,7 +42,7 @@ const ProductDetails: React.FC = () => {
     if (id) {
       axios
         .get(
-          `http://localhost/maggiebeautyhome-backend/get_product_details.php?id=${id}`
+          `https://maggiebeautyhome.kesug.com/get_product_details.php?id=${id}`
         )
         .then((response) => {
           setProduct(response.data.product);
