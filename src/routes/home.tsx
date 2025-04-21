@@ -11,9 +11,7 @@ export const Home = () => {
       <br />
       
       <div className=" grid ds:grid-cols-1 gap-6 breakpoint:grid-cols-3">
-        <CategoryFilter onCategoryChange={function (category: string): void {
-            throw new Error("Function not implemented.");
-          } } />
+        <CategoryFilter onCategoryChange={(category) => console.log("Selected category:", category)} />
         <ProductList />
       </div>
     </div>

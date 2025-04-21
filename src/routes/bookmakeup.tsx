@@ -1,8 +1,8 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { TopBar } from "../components/topbar";
-import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
-import { CheckCircle, Upload } from "lucide-react";
+// import axios from "axios";
+// import { Link, useNavigate } from "react-router-dom";
+// import { CheckCircle, Upload } from "lucide-react";
 import BannerImg from "../assets/banner.png";
 import Media1 from "../assets/media/video-1.mp4";
 import Media2 from "../assets/media/video-2.mp4";
@@ -17,77 +17,77 @@ import { Play } from "@phosphor-icons/react/dist/ssr";
 export { BannerImg, Media1, Media2, Media3 };
 
 export const BookMakeUp: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    location: "",
-    makeup_type: "",
-    time: "",
-    date: "",
-    phone: "",
-  });
-  const [photo, setPhoto] = useState<File | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState<string | null>(null);
-  const navigate = useNavigate();
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   location: "",
+  //   makeup_type: "",
+  //   time: "",
+  //   date: "",
+  //   phone: "",
+  // });
+  // const [photo, setPhoto] = useState<File | null>(null);
+  // // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState<string | null>(null);
+  // const [success, setSuccess] = useState<string | null>(null);
+  // const navigate = useNavigate();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setPhoto(e.target.files[0]);
-    }
-  };
+  // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   if (e.target.files && e.target.files[0]) {
+  //     setPhoto(e.target.files[0]);
+  //   }
+  // };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
-    setSuccess(null);
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   setError(null);
+  //   setSuccess(null);
 
-    try {
-      const formDataToSend = new FormData();
-      formDataToSend.append("name", formData.name);
-      formDataToSend.append("email", formData.makeup_type);
-      formDataToSend.append("email", formData.date);
-      formDataToSend.append("email", formData.phone);
-      formDataToSend.append("email", formData.time);
-      formDataToSend.append("location", formData.location);
-      if (photo) {
-        formDataToSend.append("photo", photo);
-      }
+  //   try {
+  //     const formDataToSend = new FormData();
+  //     formDataToSend.append("name", formData.name);
+  //     formDataToSend.append("email", formData.makeup_type);
+  //     formDataToSend.append("email", formData.date);
+  //     formDataToSend.append("email", formData.phone);
+  //     formDataToSend.append("email", formData.time);
+  //     formDataToSend.append("location", formData.location);
+  //     if (photo) {
+  //       formDataToSend.append("photo", photo);
+  //     }
 
-      await axios.post(
-        "http://localhost/maggiebeautyhome-backend/book-makeup.php",
-        formDataToSend,
-        {
-          headers: { "Content-Type": "multipart/form-data" },
-        }
-      );
+  //     await axios.post(
+  //       "http://localhost/maggiebeautyhome-backend/book-makeup.php",
+  //       formDataToSend,
+  //       {
+  //         headers: { "Content-Type": "multipart/form-data" },
+  //       }
+  //     );
 
-      setSuccess("Agent signed up successfully!");
-      setFormData({
-        name: "",
-        makeup_type: "",
-        date: "",
-        time: "",
-        location: "",
-        phone: "",
-      });
-      setPhoto(null);
-      navigate("/start-your-claim");
-    } catch (error) {
-      setError("Error signing up. Please try again.");
-      console.error("Error signing up:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     setSuccess("Agent signed up successfully!");
+  //     setFormData({
+  //       name: "",
+  //       makeup_type: "",
+  //       date: "",
+  //       time: "",
+  //       location: "",
+  //       phone: "",
+  //     });
+  //     setPhoto(null);
+  //     navigate("/start-your-claim");
+  //   } catch (error) {
+  //     setError("Error signing up. Please try again.");
+  //     console.error("Error signing up:", error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
   return (
     <main className="w-full">
-      {success && (
+      {/* {success && (
         <div className="w-full flex items-center fixed bg-primary/40 p-4 bg-opacity-40 top-0 z-20 justify-center h-screen">
           {" "}
           <div className="rounded-md flex items-center text-green-600 gap-4 max-w-sm w-full tw-font-medium bg-white p-5">
@@ -95,10 +95,10 @@ export const BookMakeUp: React.FC = () => {
             Succesfully booked your session{" "}
           </div>{" "}
         </div>
-      )}
+      )} */}
       <main className="w-full max-w-[90%] mx-auto ">
         <TopBar />
-        
+{/*         
         <section className="w-full h-auto pt-8">
           {error && <p className="text-red-500 text-sm text-center">{error}</p>}
           <div className="space-y-6 text-center max-w-2xl flex items-center flex-col mx-auto w-full">
@@ -126,7 +126,7 @@ export const BookMakeUp: React.FC = () => {
             </a>
           </div>
           <div className="py-8"></div>
-        </section>
+        </section> */}
       </main>
       <Swiper
         modules={[Autoplay]}
