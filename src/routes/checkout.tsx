@@ -59,7 +59,7 @@ const Checkout: React.FC = () => {
 
     axios
       .post(
-        "http://localhost/maggiebeautyhome-backend/save_checkout_data.php",
+        "https://maggiebeautyhome.kesug.com/save_checkout_data.php",
         {
           address,
           phone,
